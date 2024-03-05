@@ -1,0 +1,344 @@
+
+body {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+}
+.cancel {
+    background-color: black;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.cancel p {
+    color: white;
+    font-size: 12px;
+    padding: 5px;
+    margin: 0;
+}
+.cancel i {
+    display: none;
+}
+/*  End header */
+
+.parent-1 {
+    height: 100vh;
+    background-color: plum;
+}
+.parent-1 .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    padding: 20px;
+}
+.parent-1 .icon {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.parent-1 .header i {
+    font-size: 20px; 
+}
+.parent-1 .bd {
+    position: fixed;
+    left: 50%;
+    height: 100vh;
+    z-index: 1;
+}
+.parent-1 .bd a {
+    font-size: 90px;
+    text-decoration: none;
+    color: black;
+}
+.parent-1 .bd a:first-child {
+    position: absolute;
+    top: 10%;
+    transform: translate(-50% ,-50%);
+}
+.parent-1 .bd a:last-child {
+    position: absolute;
+    bottom: -2%;
+    transform: translate(-50% ,-50%);
+}
+.parent-1 span {
+    height: 60vh;
+    position: absolute;
+    top: -60vh;
+    right: 0;
+    left: 0;
+    text-align: center;
+    z-index: 1;
+    background-color: rgb(255 255 255 /.9);
+    position: fixed;
+}
+.parent-1 span ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,auto));
+    justify-content: space-evenly;
+    position: relative;
+    top: 40%;
+    z-index: -1;
+}
+.parent-1 span ul a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.parent-1 span ul a:hover {
+    text-decoration: underline black 1px;
+}
+.parent-1 span li {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,auto));
+    background-color: blue;
+    justify-content: space-evenly;
+    position: relative;
+    top: 30%;
+    list-style: none;
+}
+.parent-1 span .ul a {
+    font-size: 11px;
+}
+.parent-1 span .ul a:hover {
+    text-decoration: none;
+    color: rgba(94, 94, 94, 0.576);
+}
+.parent-1 .header .menu {
+    width: 20px;
+    height: 15px;
+    cursor: pointer;
+    position: relative;
+}
+.parent-1 .header .menu b {
+    background-color: black;   
+    position: absolute;
+    cursor: pointer;
+}
+.parent-1 .header .menu b:first-child {
+    width: 20px;
+    height: 2px;
+    top: 2px;
+}
+.parent-1 .header .menu b:nth-child(2) {
+    width: 20px;
+    height: 2px;
+    top: 8px;
+}
+.parent-1 .header .menu b:last-child {
+    width: 20px;
+    height: 2px;
+    top: 14px;
+}
+.parent-1 .header .menu.toggle {
+    display: block;
+}
+.parent-1 .navbar {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .parent-1 .icon i:first-child {
+        display: none;
+    }
+    .parent-1 span  {
+        height: 100%;
+        top: -100%; 
+    }
+    .parent-1 span ul{
+        display: none;
+    } 
+    .parent-1 .navbar  {
+        display: block; 
+        height: 100%;
+        height: 100%;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .navbar div {
+        margin: 0;
+        position: relative;
+        top :30%;
+        font-size: 12px;
+    }
+    .navbar .search input {
+        padding: 15px;
+        border: none;
+        width: 100%;
+        margin-top: -40px;
+        outline: none;
+        background-color: transparent;
+        border: 1px solid black;
+        border-top: 1.6px solid black;
+        border-left: none;
+        border-right: none;
+    }   
+    ::placeholder {
+        font-size: 13px;
+        color: rgb(144, 144, 144);
+    }    
+    .navbar .search i {
+        position: absolute;
+        font-size: 12px;
+        right: 8px;
+    }
+    .navbar i {
+        font-size: 12px;
+        color: black;
+    }
+    .navbar .side a {
+        text-decoration: none;
+        color: black;
+        padding: 15px;
+    } 
+    .navbar .side .link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid black;
+        border-left: none;
+        border-right: none;
+        padding-right: 8px;
+        cursor: pointer;
+    }
+    .navbar .side .sub a {
+        display: block;
+        padding: 0;
+        padding-top: 14px;
+    }
+    .navbar .side .sub.open {
+        display: block;
+    }
+    .navbar .side .sub {
+        display: none;
+    }
+    .navbar .side .sub {
+        height: 125px;
+    }
+    .navbar .side .sub a {
+        display: flex;
+        padding-left: 100px;
+    }
+    .navbar .side .sub a:hover {
+        width: fit-content;
+        text-decoration: underline  rgb(0, 125, 58);
+        transition: .5s;
+    }
+    .cancel i {
+        display: block;
+        position: absolute; 
+        right: 20px;
+        top: 4px;
+        font-size: 18px;
+        color: white;
+        cursor: pointer;
+    }
+}
+
+/*  End header */
+
+/* strat landing */
+.parent-2 {
+    height: 100vh;
+    text-align: center;
+}
+.parent-2 .Tcenter {
+    text-align: center;
+    letter-spacing: 3px;
+}
+.parent-2 .images {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.parent-2 .images img {
+    width: 300px;
+}
+.parent-2 .images span {
+    font-family: 'Fraunces', serif;
+}
+.parent-2 {
+    position: relative;
+}
+.parent-2 .images  {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+.parent-2 p a {
+    /* position: absolute;
+    bottom: 10%;
+    text-align: center;
+    transform: translate(-50%); */
+    color: black;
+}
+
+@media (max-width: 767px) {
+    .parent-2 .images img {
+        width: 195px;
+    }
+}
+
+/* End landing */
+
+/* Start footer */
+.footer {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    scroll-snap-align: center;
+}
+.footer .links {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.footer .links a {
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 10px;
+    margin-top: 40px;
+}
+.footer i {
+    font-size: 40px;
+    color: black;
+}
+.footer .links a:hover {
+    background-color: black;
+    color: white;
+    transition: 1s;
+}
+@media (max-width:767px) {
+    .footer .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0;
+    }
+    .footer .links a {
+        padding: 6px;
+    }
+    .footer {
+        padding: 0;
+        align-items: center;
+    }
+    .footer .links a:last-child {
+        display: none;
+    }
+}
+
+
+/* End footer */
